@@ -113,8 +113,8 @@ with st.container():
       st.write('Interactive web app for calculating and visualizing grades')
       st.caption('**Technologies:** Python, Pandas, Plotly')
 
-elif page == '🛠 Skills':
-  st.tile ('Technical Skills')
+elif page == '🛠 Experiences':
+  st.tile ('Skills')
 
   # Skills with progress bars
   st.subheader('Programming Languages')
@@ -134,7 +134,7 @@ elif page == '🛠 Skills':
     with col2:
       st.progress(level/100)
 
-st.subheader('Tools & Technology')
+st.subheader('List some list that I have done or make some stuff')
 
 col1, col2, col3 = st.columns(3)
 with col1:
@@ -153,7 +153,7 @@ with col1:
     st.warning('Social Media')
     
 
-elif page == '📄 Resume':
+elif page == '📽 Projects':
   st.title('Resume')
 
   # Read PDF from my GitHub repository
@@ -176,11 +176,11 @@ elif page == '📩 Contact':
     st.subheader('Send me a message.')
 
     st.write('''
-        📧 **Email:** Jumanasheana@gmail.com
+        📧 **Email:** Jumanasheana@gmail.com 
 
         🏢 **LinkedIn:** [linkedin.com/in/yourname]
 
-        👩‍💻 **Github:** [/https://github.com/jumanasheana-glitch]
+        👩‍💻 **Github:** [/https://github.com/jumanasheana-glitch] 
 
         📷 **Instagram:** [@yourhandle(https://instagram.com)]
 
@@ -192,10 +192,10 @@ elif page == '📩 Contact':
     status = st.selectbox(
         "I'm currently:",
         [
-            '👩‍💻 Coding',
             '📕 Studying',
-            '☕ On a coffee break',
-            '🎮 Gaming',
+            '🤳🏾 Doom Scrolling ?',
+            '☕ On a alone break',
+            '🔖 Reading',
             '😴 Sleeping'
         ]
     )
@@ -206,6 +206,6 @@ elif page == '📩 Contact':
     # Footer
     st.write('---')
     st.markdown(
-        f'<center>Made with 💗 using Streamlit | © {datetime.now().year} Avinash Jairam </center>',
+        f'<center>Made with 💗 using Streamlit | © {datetime.now().year} Asheana Juman </center>',
         unsafe_allow_html = True
     )
