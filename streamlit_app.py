@@ -47,7 +47,7 @@ with col1:
                 
                 I am a student that currently attending Medagr Evers College. Who's currently learning HTML, CSS, Javascript, and Python to build innovative solutions.
                
-                🎯 **Current Focus:** Building interactive web applications with Streamlit
+                🎯 **Current Focus:** Buidling a Portfolio of myself.
             
                 📚 **Currently Learning:** Internet and Emergin Technologies (CIS 211)
             
@@ -55,7 +55,7 @@ with col1:
             ''')
   with col2:
     # Placeholder for image
-  st.image('https://raw.githubusercontent.com/asheana.juman/cis211_project1/refs/heads/main/funny cat.jfif', use_column_width=True)
+  st.image(
 
 # About Page
  elif page == '🐱‍💻 Welcome':
