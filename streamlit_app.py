@@ -91,12 +91,12 @@ elif page == "Skills":
        st.write("### Photography Sample (describe here)")
        st.write("I photograph makeup work for portfolios and events. (Add image files to expand.)")
             
-            # Add progress bar for in-progress projects
-            if project["status"] == "In Progress":
-                progress = st.progress(0.6)
-                st.write("60% Complete")
-            elif project["status"] == "Completed":
-                st.success("Project Completed!")
+# Add progress bar for in-progress projects
+  if project["status"] == "In Progress":
+         progress = st.progress(0.6)
+         st.write("60% Complete")
+ elif project["status"] == "Completed":
+         st.success("Project Completed!")
 
     for project in projects:
         display_project(project)
@@ -115,7 +115,7 @@ elif page == "Contact":
     st.write("Feel free to reach out for collaborations or opportunities!")
     
     # Create a form
-    with st.form("contact_form"):
+ with st.form("contact_form"):
         name = st.text_input("Asheana Juman")
         email = st.text_input("jumanasheana@gmail.com")
         subject = st.selectbox("Subject", 
@@ -184,7 +184,6 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
 # Use in your pages
 st.markdown('<p class="main-header">Welcome to My Portfolio</p>', 
             unsafe_allow_html=True)
