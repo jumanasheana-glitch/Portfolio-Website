@@ -67,7 +67,7 @@ if page == "Home":
     st.title(f"Welcome! I'm {personal_info['Asheana Juman']}")
     st.subheader(personal_info['title'])
     
-    # Create columns for layout
+
     col1, col2 = st.columns(2)
 
 with col1:
@@ -158,7 +158,6 @@ elif page == "Skills":
         display_project(project)
         st.write("---")  # Separator line
     
-    # Add option to filter projects
     st.write("### Filter Projects")
     status_filter = st.selectbox("Filter by status:", 
                                  ["All", "Completed", "In Progress"])
