@@ -36,9 +36,8 @@ elif page == "Contact":
     st.title("Contact Me")
     st.write("This is the contact page")
     
- ''')
 personal_info = {
-    "name": "Asheana Juman",
+    "name": "name",
     "title": "Business Information Systems Student",
     "email": "jumanasheana@gmail.com",
     "location": "Queens, NY",
@@ -64,7 +63,7 @@ projects = [
     }
 ]
 if page == "Home":
-    st.title(f"Welcome! I'm {personal_info['Asheana Juman']}")
+    st.title(f"Welcome! I'm {personal_info['name']}")
     st.subheader(personal_info['title'])
     
 
@@ -110,7 +109,8 @@ with tab3:
        
 elif page == "Skills":
     st.title("One of the ways I show my creativity, try out different looks, and motivate people is via makeup. To advance my artistic abilities, I'm always honing my craft, picking up new talents, and practicing.
-    ")
+    
+            ")
 
     
     col1, col2 = st.columns(2)
