@@ -13,46 +13,42 @@ st.set_page_config(
 
 # Create sidebar for navigation
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Home 🧿", "About Me 👾", "Skills⚙️", "Projects 🔍", "Contact📲"])
+page = st.sidebar.radio("Go to", ["Home", "About Me", "Skills", "Projects", "Contact"])
 
 # Display different pages based on selection
-if page == "Home🧿":
+if page == "Home":
     st.title("Welcome to My Portfolio")
     st.write("This is the home page")
     
-elif page == "About Me👾":
+elif page == "About Me":
     st.title("About Me")
-    st.write("Hello, my name is Asheana Juman, and I'm invested in creating something significant for myself and other people, as well as beauty and creativity. I adore making daring and distinctive makeup looks and posting them online because it allows me to showcase my artistic abilities and interact with others who share my passion for creation. 
-In addition, I'm striving to become a future investor and businesswoman. Supporting small companies and assisting in the realization of innovative ideas are my objectives. In order to broaden my capabilities and comprehend how digital technologies fuel modern companies, I'm now acquiring the technical skills I'll need along the way, such as coding in my CIS 211 class. This space is dedicated to my personal, professional, and artistic development. Stay tuned to follow my journey as I develop my abilities and pursue my goals.
-")
+    st.write("This is the about page")
     
-elif page == "Skills ⚙️":
+elif page == "Skills":
     st.title("Skills & Experience")
     st.write("This is the skills page")
     
-elif page == "Projects🔍":
+elif page == "Projects":
     st.title("My Projects")
     st.write("This is the projects page")
     
-elif page == "Contact📲":
+elif page == "Contact":
     st.title("Contact Me")
     st.write("This is the contact page")
-    # Add this after imports, before the page config
-
-# Dictionary for personal information
+    
+ ''')
+    
 personal_info = {
-    "name": "Your Name",
+    "name": "Asheana Juman",
     "title": "Business Information Systems Student",
-    "email": "your.email@example.com",
-    "location": "Brooklyn, NY",
-    "graduation": "May 2027"
+    "email": "Jumanasheana@gmail.com",
+    "location": "Queens, NY",
+    "graduation": "May 2026"
 }
 
-# List of skills
 technical_skills = ["Python", "Data Analysis", "Streamlit", "Problem Solving"]
 soft_skills = ["Communication", "Team Work", "Time Management", "Leadership"]
 
-# List of dictionaries for projects
 projects = [
     {
         "title": "Project 1 Name",
@@ -68,55 +64,54 @@ projects = [
     }
 ]
 if page == "Home":
-    st.title(f"Welcome! I'm {personal_info['name']}")
+    st.title(f"Welcome! I'm {personal_info['Asheana Juman']}")
     st.subheader(personal_info['title'])
     
     # Create columns for layout
     col1, col2 = st.columns(2)
-    
-    with col1:
+
+with col1:
         st.write("## Quick Introduction")
         st.write("""
-        I am a motivated student studying Business Information Systems 
-        at Medgar Evers College. I am passionate about technology and 
-        its applications in business.
+        Hi, I’m Asheana — a makeup creator, photography beginner, and business-minded student learning web development. I built this site to share my creative projects, track my growth, and explore how beauty and tech fit into my future goals")
         """)
         
-    with col2:
-        st.write("## Quick Facts")
-        st.write(f"**Location:** {personal_info['location']}")
-        st.write(f"**Expected Graduation:** {personal_info['graduation']}")
-        st.write(f"**Email:** {personal_info['email']}")
-        elif page == "About Me":
-    st.title("About Me")
+with col2:
+        st.write("Some facts about is that love to caputre natural photos at events, I also like being alone.")
+        st.write(f"**Location:** {personal_info['Queens']}")
+        st.write(f"**Expected Graduation:** {personal_info['May 2026']}")
+        st.write(f"**Email:** {personal_info['jumanasheana@gmail.com']}")
+
+elif page == "About Me":
+        st.title("About Me")
     
     # Add tabs for organization
     tab1, tab2, tab3 = st.tabs(["Education", "Interests", "Goals"])
     
-    with tab1:
-        st.write("### Educational Background")
+with tab1:
+        st.write(" Epic South High school")
         st.write("**Medgar Evers College, CUNY**")
-        st.write("Bachelor of Science in Business Information Systems")
-        st.write("Expected Graduation: " + personal_info['graduation'])
+        st.write("Bachelor of Science in Business Adminstrative")
+        st.write("May 2026: " + personal_info['Associate'])
         
-        # Add GPA or relevant coursework
-        st.write("**Relevant Coursework:**")
+        st.write("CIS 211 Internt & Emerg Technology")
         courses = ["Internet and Emerging Technologies", "Database Management", 
                   "Business Analysis", "Programming Fundamentals"]
         for course in courses:
             st.write(f"- {course}")
     
-    with tab2:
-        st.write("### My Interests")
-        # Add your interests here
+with tab2:
+        st.write("My interest are in beauty, learning new stuff, Reading books, and building legos")
         
-    with tab3:
-        st.write("### Career Goals")
-        # Add your goals here
+        
+with tab3:
+        st.write("My ultimate goal is to earn a bachelor's and associate's degree in business administration.  My goal is to become an investor and contribute to raising awareness of a small business with a mission.")
+       
 elif page == "Skills":
-    st.title("Skills & Experience")
+    st.title("One of the ways I show my creativity, try out different looks, and motivate people is via makeup. To advance my artistic abilities, I'm always honing my craft, picking up new talents, and practicing.
+    ")
+
     
-    # Create two columns
     col1, col2 = st.columns(2)
     
     with col1:
@@ -124,7 +119,7 @@ elif page == "Skills":
         for skill in technical_skills:
             st.write(f"- {skill}")
         
-        # Add skill proficiency bars
+        
         st.write("### Skill Proficiency")
         python_level = st.slider("Python", 0, 100, 60, disabled=True)
         excel_level = st.slider("Excel", 0, 100, 80, disabled=True)
@@ -145,8 +140,7 @@ elif page == "Skills":
         st.bar_chart(data=chart_data, x="Skill Category", y="Proficiency")
     elif page == "Projects":
     st.title("My Projects")
-    
-    # Function to display project cards
+   
     def display_project(project):
         with st.expander(project["title"]):
             st.write(f"**Description:** {project['description']}")
@@ -159,8 +153,7 @@ elif page == "Skills":
                 st.write("60% Complete")
             elif project["status"] == "Completed":
                 st.success("Project Completed!")
-    
-    # Display all projects
+
     for project in projects:
         display_project(project)
         st.write("---")  # Separator line
@@ -180,12 +173,12 @@ elif page == "Skills":
     
     # Create a form
     with st.form("contact_form"):
-        name = st.text_input("Your Name")
-        email = st.text_input("Your Email")
+        name = st.text_input("Asheana Juman")
+        email = st.text_input("jumanasheana@gmail.com")
         subject = st.selectbox("Subject", 
                               ["General Inquiry", "Project Collaboration", 
                                "Job Opportunity", "Other"])
-        message = st.text_area("Message", height=150)
+        message = st.text_area("Message", height=105)
         
         submitted = st.form_submit_button("Send Message")
         
@@ -199,7 +192,7 @@ elif page == "Skills":
                 st.write(f"Message: {message[:100]}...")
             else:
                 st.error("Please fill in all required fields.")
-    # Add this function before your main page logic
+    
 def calculate_gpa(grades):
     """Calculate GPA from a list of letter grades"""
     grade_points = {
@@ -214,9 +207,9 @@ def calculate_gpa(grades):
     total_points = sum(grade_points.get(grade, 0) for grade in grades)
     return total_points / len(grades)
 
-# Add to your Skills or About page
+
 st.write("### GPA Calculator")
-st.write("Enter your grades to calculate your GPA")
+st.write("2.9")
 
 num_courses = st.number_input("How many courses?", min_value=1, max_value=10, value=4)
 grades = []
