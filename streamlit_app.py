@@ -37,13 +37,13 @@ elif page == "Contact":
     st.write("This is the contact page")
     
  ''')
-    
 personal_info = {
     "name": "Asheana Juman",
     "title": "Business Information Systems Student",
-    "email": "Jumanasheana@gmail.com",
+    "email": "jumanasheana@gmail.com",
     "location": "Queens, NY",
-    "graduation": "May 2026"
+    "graduation": "June 2026"
+
 }
 
 technical_skills = ["Python", "Data Analysis", "Streamlit", "Problem Solving"]
@@ -84,9 +84,10 @@ with col2:
 
 elif page == "About Me":
         st.title("About Me")
-    
+
     # Add tabs for organization
     tab1, tab2, tab3 = st.tabs(["Education", "Interests", "Goals"])
+
     
 with tab1:
         st.write(" Epic South High school")
@@ -165,7 +166,7 @@ elif page == "Skills":
     if status_filter != "All":
         filtered = [p for p in projects if p["status"] == status_filter]
         st.write(f"Showing {len(filtered)} projects with status: {status_filter}")
-  elif page == "Contact":
+elif page == "Contact":
     st.title("Contact Me")
     
     st.write("Feel free to reach out for collaborations or opportunities!")
