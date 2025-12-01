@@ -5,11 +5,12 @@ from datetime import datetime
 import streamlit as st
 
 # Configure the page
+
 st.set_page_config(
     page_title="Asheana Juman - Portfolio",
-    page_icon=":book:",
-    layout="wide"
-)
+    page_icon="🎨",
+    layout="wide")
+
 
 # Create sidebar for navigation
 st.sidebar.title("Navigation")
@@ -27,126 +28,68 @@ elif page == "About Me":
 elif page == "Skills":
     st.title("Skills & Experience")
     st.write("This is the skills page")
-    
-elif page == "Projects":
-    st.title("My Projects")
-    st.write("This is the projects page")
-    
-elif page == "Contact":
-    st.title("Contact Me")
-    st.write("This is the contact page")
-    
-personal_info = {
-    "name": "name",
-    "title": "Business Information Systems Student",
-    "email": "jumanasheana@gmail.com",
-    "location": "Queens, NY",
-    "graduation": "June 2026"
+    col1, col2 = st.columns([2,1])
+    with col1:
+    st.write("""I am a makeup creator and photography enthusiast studying Business Information Systems. 
+            I combine creativity and business skills to build a career as an entrepreneur and investor in small businesses.""")
+    st.write("**What I do:**")
+    st.write("- Create artistic makeup looks and document them with photography")
+    st.write("- Build web apps using Python and Streamlit")
+    st.write("- Learn business and technical skills to launch and support small businesses")
+    with col2:
+    st.write("## Quick Facts")
+    st.write(f"**Location:** {personal_info['location']}")
+    st.write(f"**Expected Graduation:** {personal_info['graduation']}")
+    st.write(f"**Contact:** {personal_info['email']}")
+    st.write("---")
 
-}
 
-technical_skills = ["Python", "Data Analysis", "Streamlit", "Problem Solving"]
-soft_skills = ["Communication", "Team Work", "Time Management", "Leadership"]
 
-projects = [
-    {
-        "title": "Project 1 Name",
-        "description": "Brief description of what this project does",
-        "technologies": ["Python", "Streamlit"],
-        "status": "Completed"
-    },
-    {
-        "title": "Project 2 Name",
-        "description": "Brief description of what this project does",
-        "technologies": ["Excel", "Data Analysis"],
-        "status": "In Progress"
-    }
-]
-if page == "Home":
-    st.title(f"Welcome! I'm {personal_info['name']}")
-    st.subheader(personal_info['title'])
-    
-
-    col1, col2 = st.columns(2)
-
-with col1:
-        st.write("## Quick Introduction")
-        st.write("""
-        Hi, I’m Asheana — a makeup creator, photography beginner, and business-minded student learning web development. I built this site to share my creative projects, track my growth, and explore how beauty and tech fit into my future goals")
-        """)
-        
-with col2:
-        st.write("Some facts about is that love to caputre natural photos at events, I also like being alone.")
-        st.write(f"**Location:** {personal_info['Queens']}")
-        st.write(f"**Expected Graduation:** {personal_info['May 2026']}")
-        st.write(f"**Email:** {personal_info['jumanasheana@gmail.com']}")
-
-elif page == "About Me":
-        st.title("About Me")
-
-    # Add tabs for organization
-    tab1, tab2, tab3 = st.tabs(["Education", "Interests", "Goals"])
-
-    
-with tab1:
-        st.write(" Epic South High school")
-        st.write("**Medgar Evers College, CUNY**")
-        st.write("Bachelor of Science in Business Adminstrative")
-        st.write("May 2026: " + personal_info['Associate'])
-        
-        st.write("CIS 211 Internt & Emerg Technology")
-        courses = ["Internet and Emerging Technologies", "Database Management", 
-                  "Business Analysis", "Programming Fundamentals"]
-        for course in courses:
-            st.write(f"- {course}")
-    
-with tab2:
-        st.write("My interest are in beauty, learning new stuff, Reading books, and building legos")
-        
-        
-with tab3:
+elif page == "About":
+   st.header("About Me")
+   tabs = st.tabs(["Education", "Interests", "Goals"])
+    with tabs[0]:
+       st.write("**Medgar Evers College, CUNY**")
+       st.write("Bachelor of Science — Business Information Systems")
+       st.write("Relevant coursework:")
+       coursework = ["Internet & Emerging Technologies", "Database Management", "Business Analysis", "Programming Fundamentals"]
+       for c in coursework:
+           st.write(f"- {c}")
+    with tabs[1]:
+       st.write("**Interests:** Makeup artistry, photography, web development, entrepreneurship, small business support.")
+       st.write("**Hobbies:** Reading, building small projects, trying new creative styles.")
+     with tabs[2]:
+           st.write("**Career Goals:** Become a business owner and investor, support small businesses, and integrate creative work with technology.")
+    with tab3:
         st.write("My ultimate goal is to earn a bachelor's and associate's degree in business administration.  My goal is to become an investor and contribute to raising awareness of a small business with a mission.")
-       
-elif page == "Skills":
-    st.title("One of the ways I show my creativity, try out different looks, and motivate people is via makeup. To advance my artistic abilities, I'm always honing my craft, picking up new talents, and practicing.
-    
-            ")
 
-    
-    col1, col2 = st.columns(2)
-    
+
+elif page == "Skills":
+    st.header("Skills & Experience")
+    Col1, col2 = st.columns(2)
     with col1:
         st.write("### Technical Skills")
         for skill in technical_skills:
             st.write(f"- {skill}")
-        
-        
-        st.write("### Skill Proficiency")
-        python_level = st.slider("Python", 0, 100, 60, disabled=True)
-        excel_level = st.slider("Excel", 0, 100, 80, disabled=True)
-        html_level = st.slider("HTML/CSS", 0, 100, 40, disabled=True)
-        
+        st.write("### Tools & Platforms")
+        st.write("- Streamlit  - Python - Excel - Canva")
+         st.write("### Technical Proficiency")
+         py = st.slider("Python proficiency", 0, 100, 60)
+         ex = st.slider("Excel proficiency", 0, 100, 80)
+         html = st.slider("HTML/CSS proficiency", 0, 100, 40)
     with col2:
         st.write("### Soft Skills")
         for skill in soft_skills:
             st.write(f"- {skill}")
-            
-        # Add a simple chart
-        st.write("### Skills Distribution")
-        import random
-        chart_data = {
-            "Skill Category": ["Technical", "Analytical", "Communication", "Leadership"],
-            "Proficiency": [70, 65, 80, 60]
-        }
-        st.bar_chart(data=chart_data, x="Skill Category", y="Proficiency")
-    elif page == "Projects":
-    st.title("My Projects")
-   
-    def display_project(project):
-        with st.expander(project["title"]):
-            st.write(f"**Description:** {project['description']}")
-            st.write(f"**Technologies Used:** {', '.join(project['technologies'])}")
-            st.write(f"**Status:** {project['status']}")
+        st.write("### Portfolio Snapshot")
+        df = pd.DataFrame({
+             "Skill Category": ["Technical", "Analytical", "Communication", "Leadership"],
+             "Proficiency": [py, ex, 75, 65]
+       })
+       st.bar_chart(df.set_index("Skill Category"))
+       st.write("---")
+       st.write("### Photography Sample (describe here)")
+       st.write("I photograph makeup work for portfolios and events. (Add image files to expand.)")
             
             # Add progress bar for in-progress projects
             if project["status"] == "In Progress":
@@ -195,12 +138,7 @@ elif page == "Contact":
     
 def calculate_gpa(grades):
     """Calculate GPA from a list of letter grades"""
-    grade_points = {
-        'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0,
-        'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7,
-        'D': 1.0, 'F': 0.0
-    }
-    
+    grade_points = { 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0, 'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D': 1.0, 'F': 0.0}
     if not grades:
         return 0.0
     
