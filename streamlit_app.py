@@ -18,8 +18,8 @@ personal_info = {
     "name": "Asheana Juman",
     "title": "Business Information Systems Student",
      "email": "jumanasheana@gmail.com",
-|     "location": "Queens, NY",
-|     "graduation": "June 2026"
+     "location": "Queens, NY",
+     "graduation": "June 2026"
  }
 
 technical_skills = ["Python", "Data Analysis", "Streamlit", "HTML/CSS", "Photography"]
