@@ -167,8 +167,11 @@ if st.button("Calculate GPA"):
 # -----------------------------
 # Projects Page
 # -----------------------------
-elif page == 
+elif page == "Projects":
+    st.title("My Projects")
+    st.write("Here are some of the personal and academic projects I’ve completed or am currently working on.")
 
+    projects = [
         {
             "title": "Pinterest Makeup Recreation",
             "description": "Recreated several Pinterest makeup looks and documented the process through before/after photos. This helped develop my creativity and beauty-content skills.",
@@ -216,6 +219,9 @@ elif page == "Contact":
     with st.form("contact_form", clear_on_submit=True):
          name = st.text_input("Asheana Juman")
          email = st.text_input("Jumanasheana@gmail.com")
+         st.write("### Résumé")
+st.markdown(" 
+
          subject = st.selectbox("Subject", ["General Inquiry", "Collab", "Job Opportunity", "Other"])
          message = st.text_area("Message", height=105)
          submit = st.form_submit_button("Send")
@@ -235,5 +241,5 @@ elif page == "Contact":
 # -----------------------------
 st.markdown("""<hr style='border:1px solid #e6e6e6'>""", unsafe_allow_html=True)
 st.caption("© Asheana Juman — Portfolio created for CIS 211. Built with Streamlit.")
-214 |
-215 | # End of file
+
+# End of file
