@@ -85,7 +85,7 @@ if page == "Home":
          st.write(f"**Location:** {personal_info['location']}")
          st.write(f"**Expected Graduation:** {personal_info['graduation']}")
          st.write(f"**Contact:** {personal_info['email']}")
-     st.write("---")
+     st.write("-")
 
 # -----------------------------
 # About Page
